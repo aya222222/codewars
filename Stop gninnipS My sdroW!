@@ -1,0 +1,16 @@
+function spinWords(string) {
+  let stringArray = string.split(" ");
+
+
+  stringArray = stringArray.map((el, i) => {
+    if (el.length >= 5) {
+      return el.split("").reverse().join("");
+    } else {
+      return el;
+    }
+  });
+
+  let finalString = stringArray.join(" ");
+  return finalString
+
+}
