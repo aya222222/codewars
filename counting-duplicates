@@ -1,0 +1,23 @@
+function duplicateCount(text) {
+  let map = new Map();
+  let textArray = Array.from(text);
+  
+  textArray.map((el, i) => {
+    el = el.toLowerCase();
+    if (map.has(el)) {
+      map.set(el, map.get(el) + 1);
+    } else {
+      map.set(el, 1);
+    }
+  });
+  
+  let count = 0;
+  for (let value of map.values()) {
+    if (value > 1) {
+      count++;
+    }
+  }
+
+  return count;
+  
+}
